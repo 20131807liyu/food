@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>菜谱大全</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/cook.css">
+	<script>
+	var timer=null;
+	var current=0;
+	function change(){
+		var banner=document.getElementsByClassName("cbanner_left")[0];
+		var divs=banner.getElementsByClassName("cInner");
+		var num=document.getElementById("cnum");
+		var spans=num.getElementsByTagName("span");
+		function show(){
+			current=current+1>divs.length-1?0:current+1;	
+			divs[current].className="cInner cshow";	
+			spans[current].className="active";
+			if(current==0){
+				divs[divs.length-1].className="cInner";
+				spans[spans.length-1].className="";
+			}
+			divs[current-1].className="cInner";
+			spans[current-1].className="";
+		}
+		timer=setInterval(show,2000);
+		for(var i=0;i<spans.length;i++){
+			// spans[i].index=i;
+			// spans[i].onclick=function(){
+			// 	clearInterval(timer);
+			// 	for(var j=0;j<spans.length;j++){
+			// 		spans[j].className="";
+			// 	}
+			// 	this.className="active";
+			// 	divs[this.index].className="cInner cshow";
+			// 	alert(this.index);
+			// 	current=this.index;
+			// 	timer=setInterval(show,2000);
+			// }
+			// 闭包做法
+			(function(i){
+				spans[i].onclick=function(){
+					clearInterval(timer);
+					for(var j=0;j<spans.length;j++){
+						spans[j].className="";
+					}
+					this.className="active";
+					divs[i].className="cInner cshow";
+					current=i;
+					timer=setInterval(show,2000);
+				}
+				
+			})(i);
+		}
+	}
+	window.onload=function(){
+		change();
+	}
+	</script>
+</head>
+<body>
+	<div id="main">
+		<div class="header">
+			<div class="nav">
+				<div class="nav_up">
+					<a href="http://www.meishij.net/" class="logo">
+						<img src="../images/logo.png" alt="">
+					</a>
+					<form method="get">
+						<input type="text" placeholder="请输入您要搜索的商品"><input type="submit" value="查询">
+					</form>
+					<div class="side">
+						<ul>
+							<li><a href="">QQ登录</a></li>
+							<li><a href="">微博登录</a></li>
+							<li><a href="">登录</a></li>
+							<li><a href="">注册</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="nav_bottom">
+					<div>
+						<ul>
+							<li><a href="index.html">首页</a></li>
+							<li><a href="cook.html" class="wave">菜谱大全</a></li>
+							<li><a href="health.html">饮食健康</a></li>
+							<li><a href="store.html">写食派</a></li>
+							<li><a href="shop.html">家居馆</a></li>
+							<li><a href="superMan.html">美食达人</a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="cookBanner">
+			<div id="cnum">
+					<span class="active"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+			</div>
+			<div class="cbanner_left">
+				<div class="cInner cshow">
+					<img src="../images/cookbr01.jpg" alt="">
+				</div>
+				<div class="cInner">
+					<img src="../images/cookbr02.jpg" alt="">
+				</div>
+				<div class="cInner">
+					<div class="cpic">
+						<img src="../images/cookbr03.jpg" alt="">
+					</div>
+					<div class="cword">
+						<h4>香煎龙利鱼</h4>
+						<p><strong>功效与作用</strong></p>
+						<p> 姜:降逆止呕、化痰止咳、散寒解表 </p>
+						<p><strong>By qifei</strong></p>
+					</div>
+				</div>
+				<div class="cInner">
+					<div class="cpic">
+						<img src="../images/cookbr04.jpg" alt="">
+					</div>
+					<div class="cword">
+						<h4>蒜蓉粉丝虾</h4>
+						<p><strong>功效与作用</strong></p>
+						<p> 粉丝:补血、富含碳水化合物、富含铁 </p>
+						<p><strong>By 悍匪夫人</strong></p>
+					</div>
+				</div>
+				<div class="cInner">
+					<div class="cpic">
+						<img src="../images/cookbr05.jpg" alt="">
+					</div>
+					<div class="cword">
+						<h4>经典美式汉堡</h4>
+						<p><strong>功效与作用</strong></p>
+						<p>  牛肉:补脾胃、强筋骨、益气血  </p>
+						<p> 西红柿:健胃、消食积、生津止渴 </p>
+						<p> 洋葱:健胃、祛痰、利水 </p>
+						<p><strong>By 悍匪夫人</strong></p>
+					</div>
+				</div>
+			</div>
+			<div class="cbanner_right">
+				<h3>热门标签</h3>
+				<ul>
+					<li>
+						<a href="">菜品</a>
+						<a href="">蒸菜</a>
+						<a href="">下酒菜</a>
+						<a href="">粥</a>
+					</li>
+					<li>
+						<a href="">菜系</a>
+						<a href="">川菜</a>
+						<a href="">湘菜</a>
+						<a href="">粤菜</a>
+						<a href="">鲁菜</a>
+					</li>
+					<li>
+						<a href="">食材</a>
+						<a href="">南瓜</a>
+						<a href="">莲藕</a>
+						<a href="">山药</a>
+						<a href="">螃蟹</a>
+					</li>
+					<li>
+						<a href="">功效</a>
+						<a href="">养胃</a>
+						<a href="">降火</a>
+						<a href="">养肝</a>
+						<a href="">减肥</a>
+					</li>
+					<li>
+						<a href="">场景</a>
+						<a href="">早餐</a>
+						<a href="">夜宵</a>
+						<a href="">聚会</a>
+						<a href="">中餐</a>
+					</li>
+					<li>
+						<a href="">口味</a>
+						<a href="">甜</a>
+						<a href="">辣</a>
+						<a href="">清淡</a>
+						<a href="">微辣</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="cookpic">
+				<h2><strong>菜谱</strong>正流行<a href="">/更多</a></h2>
+				<div class="picInner">
+					<div class="picLeft">
+						<ul>
+							<li class="first">
+								<p class="imps">
+									<a href=""><img src="../images/cooks01.jpg" alt=""></a>
+								</p>
+								<p class="con ser">
+									<a href="">泡椒番茄蒸仔鸡</a>
+								</p>
+								<p class="con">
+									<a href="">
+										<img src="../images/csmall01.jpg" alt=""><span>九九味</span>
+									</a>
+								</p>
+								<p class="con word">
+									鲜嫩的小仔鸡清蒸最能体现食材的鲜美。想来点酸辣又清爽的口味，搭配熟透的西红柿，来点泡椒和泡仔姜，是最好不过的选择。简单又美味、清爽又开胃，看来饭是要遭殃啦！
+								</p>
+							</li>
+							<li>
+								<p class="impss">
+									<a href=""><img src="../images/cooks02.jpg" alt=""></a>
+								</p>
+								<p class="con ser">
+									<a href="">泡椒番茄蒸仔鸡</a>
+								</p>
+								<p class="con">
+									<a href="">
+										<img src="../images/csmall02.jpg" alt=""><span>九九味</span>
+									</a>
+								</p>
+							</li>
+							<li>
+								<p class="impss">
+									<a href=""><img src="../images/cooks03.jpg" alt=""></a>
+								</p>
+								<p class="con ser">
+									<a href="">泡椒番茄蒸仔鸡</a>
+								</p>
+								<p class="con">
+									<a href="">
+										<img src="../images/csmall03.jpg" alt=""><span>九九味</span>
+									</a>
+								</p>
+							</li>
+							<li>
+								<p class="impss">
+									<a href=""><img src="../images/cooks04.jpg" alt=""></a>
+								</p>
+								<p class="con ser">
+									<a href="">泡椒番茄蒸仔鸡</a>
+								</p>
+								<p class="con">
+									<a href="">
+										<img src="../images/csmall04.jpg" alt=""><span>九九味</span>
+									</a>
+								</p>
+							</li>
+							<li>
+								<p class="impss">
+									<a href=""><img src="../images/cooks05.jpg" alt=""></a>
+								</p>
+								<p class="con ser">
+									<a href="">泡椒番茄蒸仔鸡</a>
+								</p>
+								<p class="con">
+									<a href="">
+										<img src="../images/csmall05.jpg" alt=""><span>九九味</span>
+									</a>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="picRight">
+						<div>
+							<img src="../images/r01.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/r02.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cook_perfect">
+				<div class="cook_make">
+					<h2><strong>菜谱</strong>正流传<a href="">/更多</a></h2>
+					<div class="make_tab">
+						<h3>热门分类</h3>
+						<ul>
+							<li><a href="">家常菜</a></li>
+							<li><a href="">素菜</a></li>
+							<li><a href="">凉菜</a></li>
+							<li><a href="">汤</a></li>
+							<li><a href="">粥</a></li>
+							<li><a href="">最新菜谱</a></li>
+							<li><a href="">更多</a></li>
+						</ul>
+						<h3>食材分类</h3>
+						<ul class="last">
+							<li><a href="">肉类</a></li>
+							<li><a href="">蛋奶</a></li>
+							<li><a href="">鱼类</a></li>
+							<li><a href="">水产</a></li>
+							<li><a href="">蔬菜</a></li>
+							<li><a href="">豆类</a></li>
+							<li><a href="">五谷杂粮</a></li>
+							<li><a href="">更多</a></li>
+						</ul>
+					</div>
+					<div class="make_pic">
+						<div class="mpInner">
+							<h3>家常菜<a href="#">(全部)</a></h3>
+							<div class="show_in">
+								<ul>
+									<li><a href="http://www.xiangha.com"><img src="../images/mark01.png" alt="">扁豆焖面</a></li>
+									<li><a href="http://www.xiangha.com"><img src="../images/mark02.jpg" alt="">三杯鸡</a></li>
+									<li><a href="http://www.xiangha.com"><img src="../images/mark03.jpg" alt="">山西过油肉</a></li>
+									<li><a href="http://www.xiangha.com"><img src="../images/mark04.jpg" alt="">火腿冬瓜</a></li>
+									<li><a href="http://www.xiangha.com"><img src="../images/mark05.jpg" alt="">糖醋带鱼</a></li>
+									<li><a href="http://www.xiangha.com"><img src="../images/mark06.jpg" alt="">酱牛肉</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="mpInner">
+							<h3>最近流行菜谱<a href="#">(全部)</a></h3>
+							<div class="show_in">
+								<ul>
+									<li><a href="http://www.xiangha.com"><img src="../images/mark07.jpg" alt="">鱼香肉丝</a></li>
+									<li><a href="http://www.xiangha.com"><img src="../images/mark08.jpg" alt="">可乐鸡翅</a></li>
+									<li><a href="http://www.xiangha.com"><img src="../images/mark09.jpg" alt="">红烧排骨</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="cook_know">
+						<h3>美食知识<a href="">(全部)</a><a href="" class="logoa">/&nbsp;健康养生</a><a href="" class="logoa">/&nbsp;烹饪技术</a><a href="" class="logoa">/&nbsp;美食精选</a><a href="" class="logoa">/&nbsp;美食杂谈</a></h3>
+						<div class="knowpic">
+							<img src="../images/b.jpg" alt="">
+						</div>
+						<ul>
+							<li><span>1</span><a href="">秋吃柿饼可清热润肺,这些饮食禁忌须知</a></li>
+							<li class="change"><span>2</span><a href="">女人会吃红糖好气色,教你红糖4中绝佳搭配</a></li>
+							<li class="change"><span>3</span><a href="">当心秋天吹伤嗓，多喝白开水</a></li>
+							<li class="change"><span>4</span><a href="">日常生吃这一物，千万别错过</a></li>
+							<li class="change"><span>5</span><a href="">6种食物让肌肤‘喝’足水</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="makeshow">
+					<h3>正在分享的美食<a href="">(全部)</a></h3>
+					<ul>
+						<li>
+							<a href=""><img src="../images/csmall01.jpg" alt=""></a>
+							<div>
+								<p><strong>刘佳</strong>今天的早餐，没做饭!</p>
+								<div class="spic">
+									<img src="../images/sr03.jpg" alt="" width="150px" height="150px">
+									<img src="../images/sr03.jpg" alt="" width="75px" height="75px">
+									<img src="../images/sr03.jpg" alt="" width="75px" height="75px">
+									<p style="clear:both;">118赞/21评论</p>
+								</div>
+								
+							</div>
+						</li>
+						<li>
+							<a href=""><img src="../images/csmall01.jpg" alt=""></a>
+							<div>
+								<p><strong>刘佳</strong>今天的早餐，没做饭!</p>
+								<div class="spic">
+									<img src="../images/sr03.jpg" alt="" width="150px" height="150px">
+									<img src="../images/sr03.jpg" alt="" width="75px" height="75px">
+									<img src="../images/sr03.jpg" alt="" width="75px" height="75px">
+									<p style="clear:both;">118赞/21评论</p>
+								</div>
+								
+							</div>
+						</li>
+						<li>
+							<a href=""><img src="../images/csmall01.jpg" alt=""></a>
+							<div>
+								<p><strong>刘佳</strong>今天的早餐，没做饭!</p>
+								<div class="spic">
+									<img src="../images/sr03.jpg" alt="" width="150px" height="150px">
+									<img src="../images/sr03.jpg" alt="" width="75px" height="75px">
+									<img src="../images/sr03.jpg" alt="" width="75px" height="75px">
+									<p style="clear:both;">118赞/21评论</p>
+								</div>
+								
+							</div>
+						</li>
+						<li>
+							<a href=""><img src="../images/csmall01.jpg" alt=""></a>
+							<div>
+								<p><strong>刘佳</strong>今天的早餐，没做饭!</p>
+								<div class="spic">
+									<img src="../images/sr03.jpg" alt="" width="150px" height="150px">
+									<img src="../images/sr03.jpg" alt="" width="75px" height="75px">
+									<img src="../images/sr03.jpg" alt="" width="75px" height="75px">
+									<p style="clear:both;">118赞/21评论</p>
+								</div>
+								
+							</div>
+						</li>
+						<li>
+							<a href=""></a>
+							<div></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<div class="footer">
+			<div class="footer_up">
+				<div class="left">
+					<img src="../images/footimg.png" alt="">
+					<span>让做饭更简单<br>www.MeiShi.cc</span>
+					<p style="clear:both;"><em>850,000</em>道菜谱<em>13,625,000</em>条美食日记<em>16,000,000</em>美食达人,每天都有新分享</p>
+					<p>我们每天都在进步</p>
+					<p>欢迎加入我们</p>
+				</div>
+				<div class="right">
+					<ul>
+						<li><img src="../images/foot01.png" alt=""><a href="">点击进入<br>美食杰微博</a></li>
+						<li><img src="../images/foot02.png" alt=""><a href="">点击查看<br>我们的空间</a></li>
+						<li><img src="../images/foot03.png" alt=""><a href="">扫二维码<br>加为好友</a></li>
+						<li><img src="../images/foot04.png" alt=""><a href="">下载我们<br>的手机客户端</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer_down">
+				<h3>我们的合作伙伴</h3>
+				<div class="center">
+					<ul>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">poco美食网</a></li>
+						<li><a href="">合肥公交网</a></li>
+						<li><a href="">厨师网</a></li>
+						<li><a href="">天天美食</a></li>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">poco美食网</a></li>
+						<li><a href="">合肥公交网</a></li>
+						<li><a href="">厨师网</a></li>
+						<li><a href="">天天美食</a></li>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">天天美食</a></li>
+					</ul>
+				</div>
+				<div class="buttom">
+					<ul>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">企业文化</a></li>
+						<li><a href="">公司动态</a></li>
+						<li><a href="">免责申明</a></li>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">招贤纳士</a></li>
+						<li><a href="">商务合作</a></li>
+						<li><a href="">网站地图</a></li>
+						<li><a href="">友情链接</a></li>
+					</ul>
+					<p>京ICP证150335号/京公网安备11010802009977 Copyright © 2003-2016 MEISHIJ CO.,LTD.</p>
+				</div>
+			</div>
+		</div>
+		<a href="#main" class="back"><img src="../images/back.png" alt=""></a>
+	</div>
+</body>
+</html>

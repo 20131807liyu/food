@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册页面</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/submit.css">
+	<link rel="stylesheet" href="../css/skin/skin_0.css" type="text/css" id="cssfile" />
+	<script>
+	//辅助函数:将动态维护类数组集合变成纯数组,
+	//以便操作时提高效率
+	function convertToArray(nodes){
+		try{
+			return Array.prototype.slice.call(nodes,0);
+		}catch(ex){
+			var arr=new Array();var length=nodes.length;
+			for(var i=0;i<length;i++){
+				arr.push(nodes[i]);
+			}
+			return arr;
+		}
+	}
+	// 改变颜色
+	function changeColor(){
+		var lis=document.getElementById("skin").getElementsByTagName("li");
+		lis=convertToArray(lis);
+		for(var i=0;i<lis.length;i++){
+			lis[i].onclick=function(){
+				for(var j=0;j<lis.length;j++){
+					lis[j].className="";
+				}
+				this.className="selected";
+				var link=document.getElementById("cssfile");
+				link.href=link.href.replace(/(\w+)(.css)$/,this.id+'$2');
+			}
+		}
+	}
+	window.onload=function(){
+		changeColor();
+	}
+	</script>
+</head>
+<body>
+	<div id="main">
+		<!-- <div class="header">
+			<div class="nav">
+				<div class="nav_up">
+					<a href="http://www.meishij.net/" class="logo">
+						<img src="../images/logo.png" alt="">
+					</a>
+					<form method="get">
+						<input type="text" placeholder="请输入您要搜索的商品"><input type="submit" value="查询">
+					</form>
+					<div class="side">
+						<ul>
+							<li><a href="">QQ登录</a></li>
+							<li><a href="">微博登录</a></li>
+							<li><a href="">登录</a></li>
+							<li><a href="">注册</a></li>
+						</ul>
+					</div>
+				</div> -->
+				<div class="nav_down">
+					<div class="content">
+						<h3>美食杰通行证</h3>
+						<ul id="skin">
+						<li id="skin_0" title="蓝色" class="selected"></li>
+						<li id="skin_1" title="紫色"></li>
+						<li id="skin_2" title="红色"></li>
+						<li id="skin_3" title="天蓝色"></li>
+						<li id="skin_4" title="橙色"></li>
+						<li id="skin_5" title="淡绿色"></li>
+					</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="scontent">
+			<h1>注册通行证</h1>
+			<div class="box">
+				<div>
+					<form action="">
+						<p><a href="">手机号注册</a></p>
+						<label for="">手机号:</label>
+						<input type="text" placeholder="请输入您常用的手机号" required required><br>
+						<label for=""></label>
+						<a href="" class="num">免费获取校验码</a><br>
+						<label for="">校验码</label>
+						<input type="text" placeholder="请填写验证码"><br>
+						<label for="">昵称:</label>
+						<input type="text" placeholder="不超过8个汉字或16个字母"><br>
+						<label for="">密码:</label>
+						<input type="password" placeholder="不少于6位，建议包含字母和数字"><br>
+						<label for="">确认密码:</label>
+						<input type="password" placeholder="请确认您的密码"><br>
+						<label for=""></label>
+						<input type="submit" class="btn" value="同意协议并注册"><br>
+						<label for=""></label>
+						<p><a href="" class="protol">《美食杰用户协议》</a></p>
+					</form>
+					<div class="sider">
+						<p>已有账号?<a href="">立即登录</a></p>
+						<p>使用下面账号快速登录</p>
+						<a href="" class="ar01">新浪微博</a>
+						<a href="" class="ar02">腾讯QQ</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- <div class="footer">
+			<div class="footer_up">
+				<div class="left">
+					<img src="../images/footimg.png" alt="">
+					<span>让做饭更简单<br>www.MeiShi.cc</span>
+					<p style="clear:both;"><em>850,000</em>道菜谱<em>13,625,000</em>条美食日记<em>16,000,000</em>美食达人,每天都有新分享</p>
+					<p>我们每天都在进步</p>
+					<p>欢迎加入我们</p>
+				</div>
+				<div class="right">
+					<ul>
+						<li><img src="../images/foot01.png" alt=""><a href="">点击进入<br>美食杰微博</a></li>
+						<li><img src="../images/foot02.png" alt=""><a href="">点击查看<br>我们的空间</a></li>
+						<li><img src="../images/foot03.png" alt=""><a href="">扫二维码<br>加为好友</a></li>
+						<li><img src="../images/foot04.png" alt=""><a href="">下载我们<br>的手机客户端</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer_down">
+				<h3>我们的合作伙伴</h3>
+				<div class="center">
+					<ul>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">poco美食网</a></li>
+						<li><a href="">合肥公交网</a></li>
+						<li><a href="">厨师网</a></li>
+						<li><a href="">天天美食</a></li>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">poco美食网</a></li>
+						<li><a href="">合肥公交网</a></li>
+						<li><a href="">厨师网</a></li>
+						<li><a href="">天天美食</a></li>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">天天美食</a></li>
+					</ul>
+				</div>
+				<div class="buttom">
+					<ul>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">企业文化</a></li>
+						<li><a href="">公司动态</a></li>
+						<li><a href="">免责申明</a></li>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">招贤纳士</a></li>
+						<li><a href="">商务合作</a></li>
+						<li><a href="">网站地图</a></li>
+						<li><a href="">友情链接</a></li>
+					</ul>
+					<p>京ICP证150335号/京公网安备11010802009977 Copyright © 2003-2016 MEISHIJ CO.,LTD.</p>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</body>
+</html>

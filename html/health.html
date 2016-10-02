@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>饮食健康</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/health.css">
+	<script>
+	var current=0;
+	function show_change(flag){
+		var Hbanner=document.getElementsByClassName("Hbanner")[0];
+		var pics=Hbanner.getElementsByClassName("Hpic");
+		if(flag){
+			current=current-1<0?pics.length-1:current-1;
+		}else{
+			current=current+1>pics.length-1?0:current+1;
+		}
+		for(var i=0;i<pics.length;i++){
+			pics[i].className="Hpic";
+		}
+		pics[current].className="Hpic show";
+	}
+	window.onload=function(){
+		document.getElementById("hleft").onclick=function(){
+			show_change(true);
+		}
+		document.getElementById("hright").onclick=function(){
+			show_change(false);
+		}
+	};
+	</script>
+</head>
+<body>
+	<div id="main">
+		<div class="header">
+			<div class="nav">
+				<div class="nav_up">
+					<a href="http://www.meishij.net/" class="logo">
+						<img src="../images/logo.png" alt="">
+					</a>
+					<form method="get">
+						<input type="text" placeholder="请输入您要搜索的商品"><input type="submit" value="查询">
+					</form>
+					<div class="side">
+						<ul>
+							<li><a href="">QQ登录</a></li>
+							<li><a href="">微博登录</a></li>
+							<li><a href="">登录</a></li>
+							<li><a href="">注册</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="nav_bottom">
+					<div>
+						<ul>
+							<li><a href="index.html">首页</a></li>
+							<li><a href="cook.html">菜谱大全</a></li>
+							<li><a href="health.html" class="wave">饮食健康</a></li>
+							<li><a href="store.html">写食派</a></li>
+							<li><a href="shop.html">家居馆</a></li>
+							<li><a href="superMan.html">美食达人</a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="Hbanner">
+			<div class="Hpic show">
+				<div><img src="../images/h01.jpg" alt=""><span></span><p>秋天水果种类多 10种应季水果吃出健康</p></div>
+				<div><img src="../images/h012.jpg" alt=""><span></span><p>熬夜伤肝致阴虚，10种食物最护肝</p></div>
+				<div><img src="../images/h013.jpg" alt=""><span></span><p>
+					熬夜咖肌肤回神术!10种焕肤排浊食物来救你
+				</p></div>
+			</div>
+			<div class="Hpic">
+				<div><img src="../images/h021.jpg" alt=""><span></span><p>秋天水果种类多 10种应季水果吃出健康</p></div>
+				<div><img src="../images/h022.jpg" alt=""><span></span><p>秋天水果种类多 10种应季水果吃出健康</p></div>
+				<div><img src="../images/h023.jpg" alt=""><span></span><p>秋天水果种类多 10种应季水果吃出健康</p></div>
+			</div>
+			<div class="Hpic">
+				<div><img src="../images/h031.jpg" alt=""><span></span><p>秋天水果种类多 10种应季水果吃出健康</p></div>
+				<div><img src="../images/h032.jpg" alt=""><span></span><p>秋天水果种类多 10种应季水果吃出健康</p></div>
+				<div><img src="../images/h033.jpg" alt=""><span></span><p>秋天水果种类多 10种应季水果吃出健康</p></div>
+			</div>
+			<span id="hleft">&lt;</span>
+			<span id="hright">&gt;</span>
+		</div>
+		<div class="content">
+			<div class="hnews">
+				<h3 class="on"><a href="">最新推荐</a></h3>
+				<h3><a href="">最新发布</a></h3>
+				<h3><a href="">饮食常识</a></h3>
+				<h3><a href="">瘦身美容</a></h3>
+				<h3><a href="">母婴饮食</a></h3>
+				<h3><a href="">食疗食补</a></h3>
+				<div class="newInner">
+					<ul>
+						<li>
+							<div class="npic">
+								<a href=""><img src="../images/mig01.jpg" alt="" width="160px" height="120px"></a>
+							</div>
+							<div class="ndes">
+								<h4><a href="">孩子长不高原来偏食是主因</a></h4>
+								<p class="small">3小时前</p>
+								<p class="subcontent">随着生活水平的提高，性早熟的发生率也逐年上升。很多性早熟的孩子虽然当时的身高并不矮，但他们的骨龄已超前，而且性激素提前大</p>
+							</div>
+						</li>
+						<li>
+							<div class="npic">
+								<a href=""><img src="../images/mig02.jpg" alt="" width="160px" height="120px"></a>
+							</div>
+							<div class="ndes">
+								<h4><a href="">掌握5个小技巧 孕晚期补钙效果更好</a></h4>
+								<p class="small">3小时前</p>
+								<p class="subcontent">到了孕晚期，胎儿需要大量的钙质来保证骨骼的正常发育，这时候孕妈妈们就要为身体补充一些钙了。有统计显示，在胎儿整个发育过程</p>
+							</div>
+						</li>
+						<li>
+							<div class="npic">
+								<a href=""><img src="../images/mig03.jpg" alt="" width="160px" height="120px"></a>
+							</div>
+							<div class="ndes">
+								<h4><a href="">闻着臭吃着香 榴莲有4大营养价值</a></h4>
+								<p class="small">3小时前</p>
+								<p class="subcontent">闻着臭吃着好吃的除了臭豆腐，还有榴莲。榴莲让人虽然有让人难以接受的气味，但其实它的营养价值颇高，被称为“水果之王”。今天</p>
+							</div>
+						</li>
+						<li>
+							<div class="npic">
+								<a href=""><img src="../images/mig04.jpg" alt="" width="160px" height="120px"></a>
+							</div>
+							<div class="ndes">
+								<h4><a href="">肠道喜欢的四类食物 千万别错过！</a></h4>
+								<p class="small">5小时前</p>
+								<p class="subcontent">食物会通过肠道菌群来影响健康，“伺候”好肠道，给它提供充足的营养，不被便秘困扰、肠道功能强大，我们才会有一个健康的身体。</p>
+							</div>
+						</li>
+						<li>
+							<div class="npic">
+								<a href=""><img src="../images/mig06.jpg" alt="" width="160px" height="120px"></a>
+							</div>
+							<div class="ndes">
+								<h4><a href="">饮食养生：6个果蔬竟是营养全能王</a></h4>
+								<p class="small">6小时前</p>
+								<p class="subcontent">有些食物富含多种营养素，堪称“营养全能王”，能帮人快速补充天然营养素。大家不妨了解一下它们的营养优势，日常生活中科学食用</p>
+							</div>
+						</li>
+						<li>
+							<div class="npic">
+								<a href=""><img src="../images/mig11.jpg" alt="" width="160px" height="120px"></a>
+							</div>
+							<div class="ndes">
+								<h4><a href="">开学季 学生补脑的10种美食</a></h4>
+								<p class="small">6小时前</p>
+								<p class="subcontent">转眼暑假就过去了，开学在即，妈妈要多给孩子补脑健脑。所谓的“补脑保健品”不可靠，其实在菜单上添加对大脑有利的食物最有效。</p>
+							</div>
+						</li>
+						<li>
+							<div class="npic">
+								<a href=""><img src="../images/mig08.jpg" alt="" width="160px" height="120px"></a>
+							</div>
+							<div class="ndes">
+								<h4><a href="">开学季 学生补脑的10种美食</a></h4>
+								<p class="small">6小时前</p>
+								<p class="subcontent">转眼暑假就过去了，开学在即，妈妈要多给孩子补脑健脑。所谓的“补脑保健品”不可靠，其实在菜单上添加对大脑有利的食物最有效。</p>
+							</div>
+						</li>
+						<li>
+							<div class="npic">
+								<a href=""><img src="../images/mig09.jpg" alt="" width="160px" height="120px"></a>
+							</div>
+							<div class="ndes">
+								<h4><a href="">开学季 学生补脑的10种美食</a></h4>
+								<p class="small">6小时前</p>
+								<p class="subcontent">转眼暑假就过去了，开学在即，妈妈要多给孩子补脑健脑。所谓的“补脑保健品”不可靠，其实在菜单上添加对大脑有利的食物最有效。</p>
+							</div>
+						</li>
+						<li>
+							<div class="npic">
+								<a href=""><img src="../images/mig10.jpg" alt="" width="160px" height="120px"></a>
+							</div>
+							<div class="ndes">
+								<h4><a href="">开学季 学生补脑的10种美食</a></h4>
+								<p class="small">6小时前</p>
+								<p class="subcontent">转眼暑假就过去了，开学在即，妈妈要多给孩子补脑健脑。所谓的“补脑保健品”不可靠，其实在菜单上添加对大脑有利的食物最有效。</p>
+							</div>
+						</li>
+					</ul>
+					<a href="" class="hmore">查看更多</a>
+				</div>
+			</div>
+			<div class="hword">
+				<div>
+					<h3>热门视频</h3>
+					<ul>
+						<li>
+							<div class="wpic"><img src="../images/w01.jpg" alt="" width="120px" height="80px"></div>
+							<div class="wss">
+								<p>咸甜月饼之争，传统五仁月饼pk新式奶黄心月饼</p>
+							</div>
+						</li>
+						<li>
+							<div class="wpic"><img src="../images/w02.jpg" alt="" width="120px" height="80px"></div>
+							<div class="wss">
+								<p>成都最牛烧烤:王大爷烧烤,味道绝对地道</p>
+							</div>
+						</li>
+						<li>
+							<div class="wpic"><img src="../images/w03.jpg" alt="" width="120px" height="80px"></div>
+							<div class="wss">
+								<p>上班族的快手早餐:草莓法式吐司,好吃到停不下来</p>
+							</div>
+						</li>
+						<li>
+							<div class="wpic"><img src="../images/w04.jpg" alt="" width="120px" height="80px"></div>
+							<div class="wss">
+								<p>开学了校园食品能让人放心吗</p>
+							</div>
+						</li>
+						<li>
+							<div class="wpic"><img src="../images/w05.jpg" alt="" width="120px" height="80px"></div>
+							<div class="wss">
+								<p>吃货必备技能:秋天必学四种莲藕吃法</p>
+							</div>
+						</li>
+						<li>
+							<div class="wpic"><img src="../images/w06.jpg" alt="" width="120px" height="80px"></div>
+							<div class="wss">
+								<p>法式水果塔，美味营养瘦身一样都不落下</p>
+							</div>
+						</li>
+						<li>
+							<div class="wpic"><img src="../images/w07.jpg" alt="" width="120px" height="80px"></div>
+							<div class="wss">
+								<p>中秋节吃月饼?太俗套了，快一起DIY比月饼更好吃的蛋黄酥</p>
+							</div>
+						</li>
+						<li>
+							<div class="wpic"><img src="../images/w08.jpg" alt="" width="120px" height="80px"></div>
+							<div class="wss">
+								<p>了解人体所需的7大营养,让健康常伴在身边</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="htab">
+					<h3>热门专题</h3>
+					<div>
+						<a href="">五一专题</a><a href="">补钙专题</a><a href="">孕妇营养</a><a href="">减肥食谱</a><a href="">燕窝</a><a href="">育儿专题</a><a href="">防晒</a><a href="">蔬菜汁</a><a href="">消化不良</a><a href="">学生营养</a><a href="">育儿专题</a><a href="">防晒</a><a href="">春季饮食</a><a href="">祛斑</a><a href="">美丽时尚</a>
+					</div>
+					<div>
+						<a href="">科学饮食</a><a href="">蜂蜜</a><a href="">饮食禁忌</a><a href="">补肾</a><a href="">燕窝</a><a href="">育儿专题</a><a href="">防晒</a><a href="">蔬菜汁</a><a href="">消化不良</a><a href="">学生营养</a><a href="">育儿专题</a><a href="">防晒</a><a href="">春季饮食</a><a href="">祛斑</a><a href="">美丽时尚</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer_up">
+				<div class="left">
+					<img src="../images/footimg.png" alt="">
+					<span>让做饭更简单<br>www.MeiShi.cc</span>
+					<p style="clear:both;"><em>850,000</em>道菜谱<em>13,625,000</em>条美食日记<em>16,000,000</em>美食达人,每天都有新分享</p>
+					<p>我们每天都在进步</p>
+					<p>欢迎加入我们</p>
+				</div>
+				<div class="right">
+					<ul>
+						<li><img src="../images/foot01.png" alt=""><a href="">点击进入<br>美食杰微博</a></li>
+						<li><img src="../images/foot02.png" alt=""><a href="">点击查看<br>我们的空间</a></li>
+						<li><img src="../images/foot03.png" alt=""><a href="">扫二维码<br>加为好友</a></li>
+						<li><img src="../images/foot04.png" alt=""><a href="">下载我们<br>的手机客户端</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer_down">
+				<h3>我们的合作伙伴</h3>
+				<div class="center">
+					<ul>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">poco美食网</a></li>
+						<li><a href="">合肥公交网</a></li>
+						<li><a href="">厨师网</a></li>
+						<li><a href="">天天美食</a></li>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">poco美食网</a></li>
+						<li><a href="">合肥公交网</a></li>
+						<li><a href="">厨师网</a></li>
+						<li><a href="">天天美食</a></li>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">天天美食</a></li>
+					</ul>
+				</div>
+				<div class="buttom">
+					<ul>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">企业文化</a></li>
+						<li><a href="">公司动态</a></li>
+						<li><a href="">免责申明</a></li>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">招贤纳士</a></li>
+						<li><a href="">商务合作</a></li>
+						<li><a href="">网站地图</a></li>
+						<li><a href="">友情链接</a></li>
+					</ul>
+					<p>京ICP证150335号/京公网安备11010802009977 Copyright © 2003-2016 MEISHIJ CO.,LTD.</p>
+				</div>
+			</div>
+		</div>
+		<a href="#main" class="back"><img src="../images/back.png" alt=""></a>
+	</div>
+</body>
+</html>
+</body>
+</html>

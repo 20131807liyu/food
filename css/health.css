@@ -1,0 +1,47 @@
+/*Hbanner区域样式设计*/
+a{color:#333;}
+.Hbanner{width:80%;margin:30px auto;position:relative;height:240px;}
+.Hbanner .Hpic{position:absolute;top:0;left:0;width:100%;opacity:0;}
+.Hbanner .Hpic.show{opacity:1;}
+.Hbanner .Hpic>div{float:left;position:relative;width:320px;height:240px;overflow:hidden;}
+.Hbanner .Hpic>div img{transform:scale(1);transition:0.6s all linear;position:relative;z-index:100;}
+.Hbanner .Hpic>div:hover img{transform:scale(1.1);}
+.Hbanner .Hpic>div:hover span{z-index:1;}
+.Hbanner .Hpic>div span{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.2);z-index:100;}
+.Hbanner .Hpic>div p{width:100%;color:white;position:absolute;bottom:10px;text-align:center;z-index:200;}
+.Hbanner .Hpic div:nth-child(3){float:right;}
+.Hbanner .Hpic div:nth-child(2){margin-left:57px;}
+.Hbanner span{position:absolute;height:40px;width:30px;font-size:40px;background: rgba(0,0,0,.2);color:#ccc;top:50%;z-index:100;text-align:center;line-height:40px;cursor:pointer;}
+.Hbanner span#hright{right:0;}
+.Hbanner span:hover{background:rgba(0,0,0,.4);}
+/*content区域样式设计*/
+.content{width:80%;margin:0 auto;overflow:hidden;}
+.content .hnews{width:70%;float:left;background:#fff;}
+.content .hnews h3{float: left;font-weight: 400;display: inline-block;font-size: 20px;margin-right: 20px;color: #666;padding-bottom: 4px;outline: 0;color: #333;max-width: 100%;}
+.content .hnews h3.on{color: #ff6767;border-bottom: 3px solid #ff6767;}
+.content .hnews h3:hover{color: #ff6767;border-bottom: 3px solid #ff6767;}
+.content .hnews h3 a{color:#666;}
+.content .hnews .newInner{width:100%;clear:both;}
+.newInner ul li{width:100%;clear:both;}
+.newInner ul li .npic{float:left;overflow:hidden;width:30%;box-sizing:border-box;height:160px;padding-left:34px;}
+.newInner ul li .ndes{float:left;width:60%;overflow:hidden;box-sizing:border-box;padding-right:15px;height:160px;background:#fff;}
+.newInner ul li .ndes h5{font-size:20px;padding:3px 0px;}
+.newInner ul li .ndes p.small{font-size:12px;color:#999;}
+.newInner ul li .ndes p.subcontent{font-size: 14px;color: #666;}
+.newInner a.hmore{ display: block;border-radius: 5px;text-align:center;font-size:18px;color: #ff6767;background-color: #f3f3f3;
+    outline: 0; -webkit-user-select: none;width:95%;height:45px;overflow:hidden;margin:0 auto;line-height:45px;margin-bottom:15px;}
+.content .hword{width:29%;float:right;box-sizing:border-box;}
+.content .hword>div{background:#fff;box-sizing:border-box;padding:5px;}
+.content .hword ul li{clear:both;margin-bottom:8px;overflow:hidden;}
+.content .hword ul li:first-child{margin-top:10px;}
+.content .hword h3{color: #333;border-bottom: 3px solid #ff6767;padding-bottom:15px;-webkit-user-select: none;}
+.content .hword .wpic{width:40%;float:left;height:80px;}
+.content .hword .wss{width:60%;float:left;box-sizing:border-box;padding:10px;transition:0.4s all linear;height:80px;}
+.content .hword .wss p{color:#444;font-size:15px;}
+.content .hword .wss:hover{background:#ff6767;}
+.content .hword .wss:hover p{color:#fff;}
+.content .hword .htab{margin-top:30px;width:100%;overflow:hidden;}
+.content .hword .htab>div{padding:10px;border-bottom:1px dashed #ccc;overflow:hidden;}
+.content .hword .htab>div:last-child{border-bottom:none;}
+.content .hword .htab a{float:left;width:32%;padding:10px 0px;}
+.content .hword .htab a:hover{color:#ff6767;}

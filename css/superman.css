@@ -1,0 +1,65 @@
+/*banner区域样式设计*/
+#main{background:#f5f5f5;}
+#main .superBanner{width:100%;position:relative;}
+#main .superBanner #Banner{width:80%;margin:40px auto;position:relative;height:350px;}
+#main .superBanner #Banner img{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0}
+#main .superBanner #Banner img.show{opacity:1;}
+#main .superBanner span{position:absolute;font-size:60px;top:40%;color:#eee;cursor:pointer;transition:0.4s all linear;}
+#main .superBanner span:hover{color:#333;}
+#main .superBanner span#left{left:40px;}
+#main .superBanner span#right{right:40px;}
+/*小圆点样式设计*/
+#num{position:absolute;left:50%;bottom:20px;}
+#num span{display:inline-block;width:15px;height:15px;border-radius:50%;background-color:rgba(0,0,0,.2);position:absolute;}
+#num span:last-child{left:30px;}
+#num span.active{background-color:red;}
+/*content区域样式设计*/
+/*content banner_down区域样式设计*/
+.content .banner_down{width:80%;margin:20px auto;background:#fff;height:120px;}
+.banner_down ul{width:100%;}
+.banner_down ul li{float:left;width:8%;border-right:1px dashed #eee;text-align:center;padding: 5px !important;position:relative;}
+.banner_down ul li:hover:after{transform:scaleY(1);z-index:10;transition:0.1s all linear;trnaform:scale(1);opacity:1;}
+.banner_down ul li::after{position:absolute;width:100%;height:160px;top:-20%;left:0;content:"";background:red;transform:scaleY(0);opacity:0}
+.banner_down ul li img{border-radius:50%;width:60px;height:60px;display:block;margin-left:12px;z-index:100;position:relative;}
+.banner_down ul li a{display:inline-block;padding:5px 10px;font-size:13px;color:#fff;margin-top:10px;margin-bottom:10px;border-radius:5px;z-index: 100;position:relative;}
+.banner_down ul li:nth-child(1) a,.banner_down ul li:nth-child(1):hover:after{background:#ff7c7c;}
+.banner_down ul li:nth-child(2) a,.banner_down ul li:nth-child(2):hover:after{background:#ff4233;}
+.banner_down ul li:nth-child(3) a,.banner_down ul li:nth-child(3):hover:after{background:#ffc739;}
+.banner_down ul li:nth-child(4) a,.banner_down ul li:nth-child(4):hover:after{background:#77bf2e;}
+.banner_down ul li:nth-child(5) a,.banner_down ul li:nth-child(5):hover:after{background:#39c45d;}
+.banner_down ul li:nth-child(6) a,.banner_down ul li:nth-child(6):hover:after{background:#33ddaf;}
+.banner_down ul li:nth-child(7) a,.banner_down ul li:nth-child(7):hover:after{background:#33d9fd;}
+.banner_down ul li:nth-child(8) a,.banner_down ul li:nth-child(8):hover:after{background:#3357b5;}
+.banner_down ul li:nth-child(9) a,.banner_down ul li:nth-child(9):hover:after{background:#6933ab;}
+.banner_down ul li:nth-child(10) a,.banner_down ul li:nth-child(10):hover:after{background:#b933be;}
+.banner_down ul li:nth-child(11) a,.banner_down ul li:nth-child(11):hover:after{background:#fa74dd;}
+.banner_down ul li:last-child{border:none;}
+/*content introduce区域样式设计*/
+.introduce{width:80%;margin:20px auto;overflow:hidden;}
+.introduce .introduceIn{width:100%;background:#fff;overflow:hidden;box-sizing:border-box;padding:5px;}
+.introduceIn>div{float:left;width:32%;box-sizing:border-box;padding:10px;}
+.introduceIn>div img{width:100%;height:100%;}
+.introduceIn>div:first-child{margin-left:15px;}
+.about{width:100%;background:#eee;overflow:hidden;}
+.about div{float:left;margin-left:40px;}
+.about div img{border-radius:50%;}
+.about dl{float:left;margin-left:40px;margin-top:20px;color:#444;}
+.about dl dd{color:red;}
+/*content grade区域样式设计*/
+.grade{width:80%;margin:20px auto;}
+.grade .inner{width:100%;overflow:hidden;}
+.grade .inner>div{float:left;}
+.grade .inner .left{width:35%;background:#fff;margin-right:10px;}
+.grade .inner .left h4{padding:15px;color:#333;border-bottom:1px solid #f5f5f5;}
+.grade .inner .left a img{border-radius:50%;width:50px;height:50px;margin-top:6px;margin-left:12px;}
+.grade .inner .left ul li{position:relative;height:66px;}
+.grade .inner .left ul li a:first-child{width:15%;float:left;}
+.grade .inner .left ul li a.name{height: 25px;line-height: 25px;color: #333;font-size: 16px;display: block;width: 60%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;float:left;margin-left:15px;margin-top:6px;}
+.grade .inner .left ul li span{height: 25px;line-height: 25px;font-size: 13px;color: #999;display: block;width: 60%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:70px;}
+.grade  .inner .left ul li a.des{display: block;position: absolute;right: 15px;top: 21px;height: 24px;border-radius: 2px;padding: 0px 6px;
+font-size: 12px;line-height: 24px;text-align:center;background:#ff7c7c;color:#fff;}
+.grade .inner .left ul li a.des.special{background:#ffc533;}
+.grade .inner .left ul li a.des.red{background:#ff4c35;}
+.grade .inner .right{width:28%;box-sizing:border-box;padding:25px;background:#fff;color:#666;}
+.grade .inner .right p{font-size:14px;margin-top:30px;}
+.grade .inner .right a{display:block;width:110px;height:35px;line-height:35px;text-align:center;background:#ff4c35;color:#fff;border-radius:2px;margin:76px auto;}

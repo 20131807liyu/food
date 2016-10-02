@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>家居馆</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/shop.css">
+	<script>
+	function getLis(){
+		var lefts=document.getElementsByClassName('Inleft');
+		var rights=document.getElementsByClassName('Inright');
+		for(var i=0;i<lefts.length;i++){
+			(function(i){
+				var lis=lefts[i].getElementsByTagName('ul')[0].getElementsByTagName('li');
+				var divs=rights[i].getElementsByTagName('div');
+				for(var j=0;j<lis.length;j++){
+					lis[j].index=j;
+					lis[j].onmouseover=function(){
+						for(var z=0;z<lis.length;z++){
+							lis[z].className="";
+							divs[z].className="";
+						}
+						this.className="show";
+						divs[this.index].className="shopshow";
+					}
+				}
+			})(i);
+		}
+	}
+	window.onload=function(){
+		var contents=document.getElementById('contents');
+		var control=document.getElementById('control');
+		var oul=contents.getElementsByTagName("ul")[0];
+		var bimg=oul.getElementsByTagName("li");
+		var span=document.getElementById("bg");
+		var lis=control.getElementsByTagName("ul")[0].getElementsByTagName("li");
+		var timer=null;
+		var index=0;
+		timer=setInterval(autoplay,2000);
+		control.onmouseover=function(){
+			clearInterval(timer);
+			change();
+		}
+		control.onmouseout=function(){
+			timer=setInterval(autoplay,2000);
+		}
+		function autoplay(){
+			index++;
+			if(index>=bimg.length){
+				index=0;
+			}
+			span.style.marginLeft=index*131+"px";
+			contents.style.marginTop=-index*310+"px";
+			contents.style.animationName="appear";
+		}
+		function change(){
+			for(var i=0;i<lis.length;i++){
+				lis[i].onmouseover=function(i){
+					return function(){
+						span.style.marginLeft=i*131+"px"; 
+						contents.style.marginTop=-i*310+"px";
+						index=i;
+					}
+				}(i);
+			}
+		}
+		getLis();
+	};
+	</script>
+</head>
+<body>
+	<div id="main">
+		<div class="header">
+			<div class="nav">
+				<div class="nav_up">
+					<a href="http://www.meishij.net/" class="logo">
+						<img src="../images/logo.png" alt="">
+					</a>
+					<form method="get">
+						<input type="text" placeholder="请输入您要搜索的商品"><input type="submit" value="查询">
+					</form>
+					<div class="side">
+						<ul>
+							<li><a href="">QQ登录</a></li>
+							<li><a href="">微博登录</a></li>
+							<li><a href="">登录</a></li>
+							<li><a href="">注册</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="nav_bottom">
+					<div>
+						<ul>
+							<li><a href="index.html">首页</a></li>
+							<li><a href="cook.html">菜谱大全</a></li>
+							<li><a href="health.html">饮食健康</a></li>
+							<li><a href="store.html">写食派</a></li>
+							<li><a href="shop.html"  class="wave">家居馆</a></li>
+							<li><a href="superMan.html">美食达人</a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="shopBanner">
+			<div class="container">
+				<div class="contents" id="contents">
+					<ul>
+						<li><img src="../images/cookb01.jpg" alt=""></li>
+						<li><img src="../images/cookb02.jpg" alt=""></li>
+						<li><img src="../images/cookb03.jpg" alt=""></li>
+						<li><img src="../images/cookb04.jpg" alt=""></li>
+						<li><img src="../images/cookb05.jpg" alt=""></li>
+					</ul>
+				</div>
+				<div class="control" id="control">
+					<span id="bg"></span>
+					<ul>
+						<li><img src="../images/s1.jpg" alt=""></li>
+						<li><img src="../images/s2.jpg" alt=""></li>
+						<li><img src="../images/s3.jpg" alt=""></li>
+						<li><img src="../images/s4.jpg" alt=""></li>
+						<li><img src="../images/s05.jpg" alt=""></li>
+					</ul>
+				</div>
+			</div>
+			<div class="word">
+				<a href="" class="btna">登录</a><a href="submit.html" class="btna ser">注册</a>
+				<a href="" class="green_word">快速赚豆秘诀</a>
+				<img src="../images/what_gold.jpg" alt="">
+				<hr>
+				<h3>最新公告<a href="">/更多</a></h3>
+				<a href="" class="green_word">商城礼品发票相关事宜</a>
+			</div>
+		</div>
+		<div class="content">
+			<div class="product">
+				<div class="first">
+					<span>1F</span><span>特权优惠区</span>
+				</div>
+				<div class="inner">
+					<div class="product_left">
+						<div class="pic"><img src="../images/cook01.jpg" alt=""></div>
+						<div class="picside">
+							<a href="" class="big">苏泊尔CFXB40FC832-75<br>智能球釜电饭煲4L</a>
+							<p>兑换积分:<em>40900分</em></p>
+							<p>特价折扣:<em>0分</em></p>
+							<p>限&nbsp;&nbsp;&nbsp;量:3件</p>
+							<a href="" class="btn">查看详情</a>
+						</div>
+					</div>
+					<div class="product_right">
+						<div class="pic"><img src="../images/cook02.jpg" alt=""></div>
+						<div class="picside">
+							<a href="" class="big">翼发30cm不粘锅无油烟<br>炒锅&nbsp;不锈炒菜烹饪锅</a>
+							<p>兑换积分:<em>7900分</em></p>
+							<p>特价折扣:<em>0分</em></p>
+							<p>限&nbsp;&nbsp;&nbsp;量:3件</p>
+							<a href="" class="btn">查看详情</a>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="product_one">
+				<div class="first">
+					<span>2F</span><span>优质产品推荐区</span>
+				</div>
+				<div class="contentIn">
+					<div class="Inleft">
+						<h4>厨房家居</h4>
+						<ul>
+							<li class="show">今日推荐</li>
+							<li>锅具</li>
+							<li>刀具</li>
+							<li>厨房配件</li>
+							<li>餐具</li>
+							<li>茶具壶具</li>
+							<li>清洁用品</li>
+						</ul>
+						<img src="../images/cook_bg01.png" alt="">
+					</div>
+					<div class="Inright">
+						<div class="shopshow">
+							<img src="../images/cookshow01.jpg" alt="">
+							<img src="../images/cookshow02.jpg" alt="">
+							<img src="../images/cookshow03.jpg" alt="">
+							<img src="../images/cookshow04.jpg" alt="">
+							<img src="../images/cookshow05.jpg" alt="">
+							<img src="../images/cookshow06.jpg" alt="">
+							<img src="../images/cookshow07.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/sd01.jpg" alt="">
+							<img src="../images/sd02.jpg" alt="">
+							<img src="../images/sd03.jpg" alt="">
+							<img src="../images/sd04.jpg" alt="">
+							<img src="../images/sd05.jpg" alt="">
+							<img src="../images/sd06.jpg" alt="">
+							<img src="../images/sd07.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/sg01.jpg" alt="">
+							<img src="../images/sg02.jpg" alt="">
+							<img src="../images/sg03.jpg" alt="">
+							<img src="../images/sg04.jpg" alt="">
+							<img src="../images/sg05.jpg" alt="">
+							<img src="../images/sg06.jpg" alt="">
+							<img src="../images/sg07.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/sc01.jpg" alt="">
+							<img src="../images/sc02.jpg" alt="">
+							<img src="../images/sc03.jpg" alt="">
+							<img src="../images/sc04.jpg" alt="">
+							<img src="../images/sc05.jpg" alt="">
+							<img src="../images/sc06.jpg" alt="">
+							<img src="../images/sc07.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/cc01.jpg" alt="">
+							<img src="../images/cc02.jpg" alt="">
+							<img src="../images/cc03.jpg" alt="">
+							<img src="../images/cc04.jpg" alt="">
+							<img src="../images/cc05.jpg" alt="">
+							<img src="../images/cc06.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/t01.jpg" alt="">
+							<img src="../images/t02.jpg" alt="">
+							<img src="../images/t03.jpg" alt="">
+							<img src="../images/t04.jpg" alt="">
+							<img src="../images/t05.jpg" alt="">
+							<img src="../images/t06.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/q01.jpg" alt="">
+							<img src="../images/q02.jpg" alt="">
+							<img src="../images/q03.jpg" alt="">
+							<img src="../images/q04.jpg" alt="">
+							<img src="../images/q05.jpg" alt="">
+							<img src="../images/q06.jpg" alt="">
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="product_two">
+				<div class="contentIn">
+					<div class="Inleft">
+						<h4>厨房电器</h4>
+						<ul>
+							<li class="show">今日推荐</li>
+							<li>常用电器</li>
+							<li>烘焙帮手</li>
+							<li>榨汁搅拌</li>
+							<li>创意小家</li>
+						</ul>
+						<img src="../images/cook_bg02.png" alt="">
+					</div>
+					<div class="Inright">
+						<div class="shopshow">
+							<img src="../images/pro01.png" alt="">
+							<img src="../images/pro02.jpg" alt="">
+							<img src="../images/pro03.png" alt="">
+							<img src="../images/pro04.jpg" alt="">
+							<img src="../images/pro05.png" alt="">
+							<img src="../images/pro06.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/d01.jpg" alt="">
+							<img src="../images/d02.png" alt="">
+							<img src="../images/d03.png" alt="">
+							<img src="../images/d04.png" alt="">
+							<img src="../images/d05.png" alt="">
+							<img src="../images/d06.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/b01.jpg" alt="">
+							<img src="../images/b02.jpg" alt="">
+							<img src="../images/b03.png" alt="">
+							<img src="../images/b04.jpg" alt="">
+							<img src="../images/b05.jpg" alt="">
+							<img src="../images/b06.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/dx01.jpg" alt="">
+							<img src="../images/dx02.jpg" alt="">
+							<img src="../images/dx03.jpg" alt="">
+							<img src="../images/dx04.jpg" alt="">
+							<img src="../images/dx05.jpg" alt="">
+							<img src="../images/dx06.jpg" alt="">
+						</div>
+						<div >
+							<img src="../images/dc01.png" alt="">
+							<img src="../images/dc02.jpg" alt="">
+							<img src="../images/dc03.png" alt="">
+							<img src="../images/dc04.jpg" alt="">
+							<img src="../images/dc05.jpg" alt="">
+							<img src="../images/dc06.jpg" alt="">
+							<img src="../images/dc07.jpg" alt="">
+						</div>
+						<div >
+							<img src="../images/cl01.png" alt="">
+							<img src="../images/cl02.jpg" alt="">
+							<img src="../images/cl03.png" alt="">
+							<img src="../images/cl04.jpg" alt="">
+							<img src="../images/cl05.jpg" alt="">
+							<img src="../images/cl06.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="product_three">
+				<div class="contentIn">
+					<div class="Inleft">
+						<h4>厨房调料</h4>
+						<ul>
+							<li class="show">今日推荐</li>
+							<li>中式调料</li>
+							<li>西式调料</li>
+						</ul>
+						<img src="../images/cook_bg03.png" alt="">
+					</div>
+					<div class="Inright">
+						<div class="shopshow">
+							<img src="../images/css01.jpg" alt="">
+							<img src="../images/css02.jpg" alt="">
+							<img src="../images/css03.jpg" alt="" width="197px" height="197px">
+							<img src="../images/css04.jpg" alt="">
+							<img src="../images/css05.jpg" alt="" width="197px" height="197px">
+							<img src="../images/css06.jpg" alt="">
+							<img src="../images/css07.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/tc01.jpg" alt="">
+							<img src="../images/tc02.jpg" alt="">
+							<img src="../images/tc03.jpg" alt="">
+							<img src="../images/tc04.jpg" alt="">
+							<img src="../images/tc05.jpg" alt="">
+							<img src="../images/tc06.jpg" alt="">
+							<img src="../images/tc07.jpg" alt="">
+							<img src="../images/tc08.jpg" alt="">
+						</div>
+						<div>
+							<img src="../images/tx01.jpg" alt="">
+							<img src="../images/tx02.jpg" alt="">
+							<img src="../images/tx03.jpg" alt="">
+							<img src="../images/tx04.jpg" alt="">
+							<img src="../images/tx05.jpg" alt="" width="197px" height="197px">
+							<img src="../images/tx06.jpg" alt="">
+							<img src="../images/tx07.jpg" alt="" width="197px" height="197px">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer_up">
+				<div class="left">
+					<img src="../images/footimg.png" alt="">
+					<span>让做饭更简单<br>www.MeiShi.cc</span>
+					<p style="clear:both;"><em>850,000</em>道菜谱<em>13,625,000</em>条美食日记<em>16,000,000</em>美食达人,每天都有新分享</p>
+					<p>我们每天都在进步</p>
+					<p>欢迎加入我们</p>
+				</div>
+				<div class="right">
+					<ul>
+						<li><img src="../images/foot01.png" alt=""><a href="">点击进入<br>美食杰微博</a></li>
+						<li><img src="../images/foot02.png" alt=""><a href="">点击查看<br>我们的空间</a></li>
+						<li><img src="../images/foot03.png" alt=""><a href="">扫二维码<br>加为好友</a></li>
+						<li><img src="../images/foot04.png" alt=""><a href="">下载我们<br>的手机客户端</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer_down">
+				<h3>我们的合作伙伴</h3>
+				<div class="center">
+					<ul>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">poco美食网</a></li>
+						<li><a href="">合肥公交网</a></li>
+						<li><a href="">厨师网</a></li>
+						<li><a href="">天天美食</a></li>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">poco美食网</a></li>
+						<li><a href="">合肥公交网</a></li>
+						<li><a href="">厨师网</a></li>
+						<li><a href="">天天美食</a></li>
+						<li><a href="">美食</a></li>
+						<li><a href="">体质监测</a></li>
+						<li><a href="">伊特</a></li>
+						<li><a href="">家居网</a></li>
+						<li><a href="">爱奇艺</a></li>
+						<li><a href="">优酷</a></li>
+						<li><a href="">天天美食</a></li>
+					</ul>
+				</div>
+				<div class="buttom">
+					<ul>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">企业文化</a></li>
+						<li><a href="">公司动态</a></li>
+						<li><a href="">免责申明</a></li>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">招贤纳士</a></li>
+						<li><a href="">商务合作</a></li>
+						<li><a href="">网站地图</a></li>
+						<li><a href="">友情链接</a></li>
+					</ul>
+					<p>京ICP证150335号/京公网安备11010802009977 Copyright © 2003-2016 MEISHIJ CO.,LTD.</p>
+				</div>
+			</div>
+		</div>
+		<a href="#main" class="back"><img src="../images/back.png" alt=""></a>
+	</div>
+</body>
+</html>

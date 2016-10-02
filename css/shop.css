@@ -1,0 +1,65 @@
+/*shopBanner区域样式设计*/
+h3{padding:0;margin:0;}
+.shopBanner{width:80%;margin:20px auto;overflow:hidden;position:relative;height:310px;margin-top: 30px;}
+.shopBanner .container { width: 660px;overflow: hidden; height: 310px;position:relative;float:left;}
+.shopBanner .contents{width:100%;}
+.shopBanner .contents ul li{height:310px;float:left;}
+.shopBanner .contents ul li img{display:inline-block;}
+.shopBanner .container .control{position:absolute;left:0;bottom:0;}
+.shopBanner .container .control ul li{float:left;}
+.shopBanner .container .control li+li{margin-left:5px;}
+.shopBanner .container .control img{width:100%;height:100%;display:inline-block;}
+.shopBanner #bg{width:126px;height:63px;position:absolute;left:0px;bottom:0;background:rgba(0,0,0,.2);}
+.shopBanner .word{width:30%;height:310px;background: #fff;float:right;padding:25px;box-sizing:border-box;}
+.shopBanner .word .btna{display:inline-block;width:120px;margin-right:15px;height:40px;line-height:40px;background:#76a800;text-align:center;color:#fff;border-radius:5px;}
+.shopBanner .word .btna.ser{background:#f7f7f7;color:#666;border:1px solid #d5d5d5;}
+.shopBanner .word .green_word{display:block;color:#666;font-size:14px;padding:10px 0px 0px;padding-bottom:10px;}
+.shopBanner .word .green_word:hover{color:#76a800;text-decoration:underline;}
+.shopBanner .word h3{color:#333;font-weight:normal;}
+.shopBanner .word h3 a{color:#76a800;font-size:14px;}
+#num{position:absolute;left:30%;bottom:5px;width:200px;height:30px;}
+#num span{display:inline-block;width:15px;height:15px;z-index:100;border-radius:50%;background-color:rgba(0,0,0,.2);position:absolute;cursor:pointer;}
+#num span:last-child{left:30px;}
+#num span.active{background-color:red;}
+/*content  product区域样式设计*/
+.product{width:80%;margin:40px auto;overflow:hidden;}
+.product .first{background:#77bf2e;}
+.product .inner{width:100%;}
+.product .inner .product_left,.product .inner .product_right{width:50%;float:left;box-sizing:border-box;background:#fff;}
+.product .inner .product_left div,.product .inner .product_right div{float:left;}
+.product .inner .product_left{border-right:1px solid #e5e5e5;}
+.product .inner .product_right .pic{padding-left:18px;}
+.pic{padding:10px;}
+.picside{padding:25px 35px;}
+.picside a.big{color:#333;font-size:18px;}
+.picside p{padding-top:10px;color:#999;}
+.picside p em{color:#ff3232;}
+.picside a.btn{width:100px;height:35px;line-height:35px;text-align:center;display:inline-block;color:#fff;background:#ff3232;border-radius:3px;margin-top:20px;}
+/*content product_one区域样式设计*/
+.product_one{width:80%;margin:30px auto;}
+/*product_one product_two product_three公共区域样式设计*/
+.first{width:100%;background:#33ddaf;height:40px;line-height:40px;color:#fff;}
+.first span{font-weight:bolder;font-size:20px;display:inline-block;margin-left:10px;}
+.first span:nth-child(2){font-weight:normal;margin-left:20px;}
+.contentIn{width:100%;background:#fafafa;overflow:hidden;position:relative;}
+.contentIn>div{float:left;box-sizing:border-box;}
+.Inleft{width:25%;padding-left:15px;padding-top:10px;position:relative;}
+.Inleft h4{font-size:20px;margin-left:35px;position:relative;color:#333;}
+.Inleft h4:before{content:"";position:absolute;width:5px;height:100%;background:#43e1b6;top:0;left:-14px;}
+.Inleft ul{box-sizing:border-box;padding-top:5px;padding-left:20px;}
+.Inleft ul li{color:#666;padding:5px 0px;cursor:pointer;}
+.Inleft ul li.show{background:#43e1b6;color:#fff;}
+.Inleft img{position:absolute;bottom:-135px;right:0;}
+.Inright{width:75%;position:relative;height:400px;}
+.Inright>div{position:absolute;top:0;left:0;opacity:0;}
+.Inright>div.shopshow{opacity:1;}
+/*content product_two区域样式设计*/
+.product_two{width:80%;margin:30px auto;}
+.product_two .Inleft h4:before{background:#fd9c95;}
+.product_two .Inleft ul li.show{background:#fd9c95;}
+.product_two .Inleft img{position:absolute;bottom:-203px;right:0;}
+/*content product_three区域样式设计*/
+.product_three{width:80%;margin:30px auto;}
+.product_three .Inleft h4:before{background:#f1a101;}
+.product_three .Inleft ul li.show{background:#f1a101;}
+.product_three .Inleft img{position:absolute;bottom:-265px;right:0;
