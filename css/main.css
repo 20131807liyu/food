@@ -3,7 +3,7 @@ h4,dd{padding:0;margin:0;}
 ul{list-style:none;}
 a{text-decoration:none;}
 img{border:none;}
-#main{width:100%;margin:0 auto;background:#fae8c8;overflow:hidden;}
+#main{width:1350px;margin:0 auto;background:#fae8c8;overflow:hidden;}
 /*header区域样式*/
 .header{width:100%;}
 .header .nav_up{background-color:#cb0a11;height:129px;line-height:129px;color:#fff;overflow:hidden;}
