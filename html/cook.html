@@ -20,9 +20,10 @@
 			if(current==0){
 				divs[divs.length-1].className="cInner";
 				spans[spans.length-1].className="";
+			}else{
+				divs[current-1].className="cInner";
+				spans[current-1].className="";
 			}
-			divs[current-1].className="cInner";
-			spans[current-1].className="";
 		}
 		timer=setInterval(show,2000);
 		for(var i=0;i<spans.length;i++){
@@ -43,6 +44,7 @@
 				spans[i].onclick=function(){
 					clearInterval(timer);
 					for(var j=0;j<spans.length;j++){
+						divs[j].className="cInner";
 						spans[j].className="";
 					}
 					this.className="active";
